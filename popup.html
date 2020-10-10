@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PIN validation automator</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    /* Модальная структура документа */
+    /*общие настройки для всего документа*/
+    html,
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      margin: 0;
+      min-height: 180px;
+      padding: 0;
+      width: 560px;
+    }
+    /*задаём ширину картинки*/
+    img {
+      width: 32px; /*ширина изображений*/
+    }
+    .modal-header {
+      align-items: center; /*выравнивание элементов по центру*/
+      border-bottom: 0.5px solid #dadada; /*свойства нижней разделительной линии*/
+      height: 50px;
+    }
+    .modal-header-flex {
+      display: flex; 
+      align-items: center; /*выравнивание элементов по центру*/
+      border-bottom: 2px solid #dadada; /*свойства нижней разделительной линии */
+      height: 50px;
+      padding: 0px 8px;
+    }
+    .modal-content {
+      padding: 0 22px; /*отступы сверху и снизу, сверху и слева*/
+    }
+    .logo {
+      padding: 0px 16px 0px 16px; /*отступы*/
+    }
+    .version {
+      /*color: #444;*/
+      font-size: 18px;
+    }
+    .flex-container {
+      display: flex; /*отображает контейнер в виде блочного элемента*/
+      justify-content: space-between; /*равномерное выравнивание элементов*/
+      padding: 10px 22px;
+    }
+    /*задаём настройки для контейнеров с иконками*/
+    .flex {
+      opacity: 1; /*параметр непрозрачности иконок*/
+      width: 120px;
+    }
+    .flex:hover {
+      opacity: 0.4; /*уровень непрозрачности при наведении курсора на элемент*/
+    }
+    .flex .fa {
+      font-size: 40px;
+      color: #2f5876;
+    }
+    .btn .btn-secondary .active {
+        border: 3px solid transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="modal-header-flex">
+    <img class="logo-icon" src="images/icon.png">
+    <h1 class="logo">
+      PIN validation automator
+    </h1>
+    <span class="badge badge-secondary version">1.0.0</span>
+  </div>
+  <div class="modal-content" style="border: none;">
+    <label for="inputHref">Input href for pin validation:</label>
+    <input type="url" class="form-control" id="inputHref" style="width: 100%;"/>
+  </div>
+  <div class="modal-content" style="border: none;">
+    <label for="secureCode">Input secure code:</label>
+    <input type="text" class="form-control" id="secureCode" style="width: 100%;"/>
+  </div>
+  <div class="modal-content" style="border: none;">
+    <div class="flex-container">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="radio" name="options" id="off" autocomplete="off" checked> Off
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="options" id="on" autocomplete="off"> On
+            </label>
+          </div>
+        <input type="button" class="btn btn-primary" id="save" value="Save" style="width: 40%;" />
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src='otp/dist/jsOTP.min.js'></script>
+  <script src="popup.js"></script>
+
+</body>
+
+</html>
