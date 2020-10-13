@@ -4,6 +4,6 @@ chrome.runtime.onMessage.addListener(function(message) {
         var totp = new jsOTP.totp();
     
         document.querySelector("#\\32 fpin").value = totp.getOtp(message[2]['secure code']);
-        document.querySelector("input[type=submit]").click();
+        document.querySelector("input.aui-button.aui-button-primary[type=submit]").click();
     }
 });
